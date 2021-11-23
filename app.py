@@ -52,6 +52,7 @@ def handle_message(event):
     if '明天早餐吃什麼' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, "test123123")
     elif '最新活動訊息' in msg:
         message = buttons_message()
         line_bot_api.reply_message(event.reply_token, message)
@@ -74,7 +75,6 @@ def handle_message(event):
 @handler.add(PostbackEvent)
 def handle_message(event):
     print(event.postback.data)
-    print("123123123")
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
